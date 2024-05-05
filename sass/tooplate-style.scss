@@ -394,7 +394,22 @@ b, strong {
     	line-height: 75px;
 	}
 }
-
+.timeline-yr-nor {
+	background: $button-color;
+	
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
+	text-align: center;
+	span {
+		color: $text-white;
+    	font-size: $link-font-size;
+    	font-weight: $font-weight-bold;
+    	display: block;
+    	line-height: 75px;
+	}
+}
 .timeline-info {
 	display: inline-block;
 	vertical-align: top;
