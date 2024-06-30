@@ -1,117 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Song Lyrics</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f8ffe8, #e3f5ab, #b7df2d);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #b7df2d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        header .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            flex: 1;
+        }
+        .collapsible {
+            background: linear-gradient(to right, #c4d890, #9ebd5c);
+            color: #5e7830;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            border-bottom: 1px solid #9ebd5c;
+        }
+        .collapsible:hover {
+            background: linear-gradient(to right, #b5cf7a, #88a93f);
+        }
+        .active, .collapsible:hover {
+            background: linear-gradient(to right, #add96e, #7c9932);
+        }
+        .collapsible:after {
+            content: '\002B'; /* Unicode character for "plus" sign (+) */
+            color: #5e7830;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212"; /* Unicode character for "minus" sign (−) */
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #ffe3e3;
+            color: #333;
+        }
+    </style>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/unicons.css">
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="css/forum.css">
+  
+      <!-- MAIN STYLE -->
+      <link rel="stylesheet" href="css/tooplate-style.css">
+</head>
+<body>
 
-    <title>Denys Murynka</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/unicons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/forum.css">
 
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
-    
-<!--
-
--->
-  </head>
-  <body>
-
-    <!-- MENU -->
+<div class="container">
     <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
+      
             <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> The Site</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
+              
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link"><span data-hover="Go Home">Home</span></a>
-                    </li>
-                    
-                  </li>
-                </ul>
+                
 
                 <ul class="navbar-nav ml-lg-auto">
                     <div class="ml-lg-4">
                       <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                        <i class="color-mode-icon"></i>
-                        Color mode
+                       
+                       
+                        <a href="index.html" class="nav-link"><span data-hover="Go Home">Home</span></a>
                       </div>
                     </div>
                 </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Articles -->
-    
-    <section class="contact py-5" id="project-info">
-            
-                <div class="wrap-collabsible">
-                  <input id="collapsible" class="toggle" type="checkbox">
-                  <label for="collapsible" class="lbl-toggle">Opinion on: Band of Horses - The Funeral</label>
-                  <div class="collapsible-content">
-                    <div class="content-inner">
-                      <p>
-                        TIL Band of Horses' The Funeral meaning is really about the singer's Ben Bridwell dread of birthday and Christmas, where there is so much pressure to please, impress, get gifts, pretend to be excited and get together for dinner. He likened the idea of these occasions to funerals. 
-                      </p>
-                    </div>
-                  </div>
-                </div>
                 
-    </section>     
-     
-    <section class="contact py-5" id="project-info">
-            
-      <div class="wrap-collabsible">
-        <input id="collapsible" class="toggle" type="checkbox">
-        <label for="collapsible" class="lbl-toggle">Opinion on: Twenty One Pilots - Lane Boy</label>
-        <div class="collapsible-content">
-          <div class="content-inner">
-            <p>
-              "Lane Boy" by Twenty One Pilots is a song that addresses the idea of staying true to oneself and not conforming to societal expectations or pressures. The song delves into the music industry and the expectations placed on artists to fit into a specific mold or genre. 
-            </p>
-          </div>
-        </div>
-      </div>
-      
-</section>     
+            </div>
+        
+    </nav>
+    <button class="collapsible">Opinion on: Band of Horses - The Funeral</button>
+    <div class="content">
+        <p>    TIL Band of Horses' The Funeral meaning is really about the singer's Ben Bridwell dread of birthday and Christmas, where there is so much pressure to please, impress, get gifts, pretend to be excited and get together for dinner. He likened the idea of these occasions to funerals. </p>
+    </div>
 
-    <!-- FOOTER -->
-     <footer class="footer py-5">
-          <div class="container">
-               <div class="row">
+    <button class="collapsible">Opinion on: Twenty One Pilots - Lane Boy</button>
+    <div class="content">
+        <p> "Lane Boy" by Twenty One Pilots is a song that addresses the idea of staying true to oneself and not conforming to societal expectations or pressures. The song delves into the music industry and the expectations placed on artists to fit into a specific mold or genre. </p>
+    </div>
 
-                    <div class="col-lg-12 col-12">                                
-                        <p class="copyright-text text-center">Copyright &copy; 2024 Denys Murynka . All rights reserved</p>
-                        <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.linkedin.com/in/denis-murynka/">Denys</a></p>
-                    </div>
-                    
-               </div>
-          </div>
-     </footer>
+    <button class="collapsible">Opinion on: Lana Del Rey - Born to Die</button>
+    <div class="content">
+        <p>Cooking..</p>
+    </div>
+</div>
+<footer>
+    © 2024 Song Lyrics Collection. All rights reserved.
+</footer>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    });
+</script>
 
-  </body>
+</body>
 </html>
